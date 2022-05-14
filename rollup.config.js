@@ -16,6 +16,7 @@ export default {
       format: "esm",
     },
   ],
+  external: ["styled-components"],
   plugins: [
     postcss({
       plugins: [],
@@ -24,6 +25,7 @@ export default {
     babel({
       exclude: "node_modules/**",
       presets: ["@babel/preset-react"],
+      plugins: ["babel-plugin-styled-components"],
     }),
     external(),
     resolve(),
