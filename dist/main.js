@@ -1,81 +1,136 @@
-require("./main.css");
-var $gXNCa$reactjsxruntime = require("react/jsx-runtime");
-require("react");
-var $gXNCa$styledcomponents = require("styled-components");
+'use strict';
 
-function $parcel$exportWildcard(dest, source) {
-  Object.keys(source).forEach(function(key) {
-    if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) {
-      return;
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var React$1 = require('react');
+var styled = require('styled-components');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React$1);
+var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
+
+function unwrapExports (x) {
+	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+}
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+var _extends_1 = createCommonjsModule(function (module) {
+function _extends() {
+  module.exports = _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
     }
 
-    Object.defineProperty(dest, key, {
-      enumerable: true,
-      get: function get() {
-        return source[key];
-      }
-    });
-  });
-
-  return dest;
+    return target;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  return _extends.apply(this, arguments);
 }
-function $parcel$export(e, n, v, s) {
-  Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
+
+module.exports = _extends, module.exports.__esModule = true, module.exports["default"] = module.exports;
+});
+
+var _extends = unwrapExports(_extends_1);
+
+var objectWithoutPropertiesLoose = createCommonjsModule(function (module) {
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
 }
-function $parcel$interopDefault(a) {
-  return a && a.__esModule ? a.default : a;
+
+module.exports = _objectWithoutPropertiesLoose, module.exports.__esModule = true, module.exports["default"] = module.exports;
+});
+
+unwrapExports(objectWithoutPropertiesLoose);
+
+var objectWithoutProperties = createCommonjsModule(function (module) {
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
 }
-var $c3e57ae7e5dd4d0a$exports = {};
 
-$parcel$export($c3e57ae7e5dd4d0a$exports, "Button", () => $35561c68d7bed295$export$353f5b6fc5456de1);
-$parcel$export($c3e57ae7e5dd4d0a$exports, "ImageGallery", () => $60ccc0809904a519$export$55a2b0f315878a81);
+module.exports = _objectWithoutProperties, module.exports.__esModule = true, module.exports["default"] = module.exports;
+});
 
+var _objectWithoutProperties = unwrapExports(objectWithoutProperties);
 
+var _excluded = ["primary", "size", "backgroundColor", "label"];
+/**
+ * Primary UI component for user interaction
+ */
 
-const $35561c68d7bed295$export$353f5b6fc5456de1 = ({ primary: primary = false , size: size = "medium" , backgroundColor: backgroundColor , label: label , ...props })=>{
-    const mode = primary ? "storybook-button--primary" : "storybook-button--secondary";
-    return /*#__PURE__*/ $gXNCa$reactjsxruntime.jsx("button", {
-        type: "button",
-        className: [
-            "storybook-button",
-            `storybook-button--${size}`,
-            mode
-        ].join(" "),
-        style: {
-            backgroundColor: backgroundColor
-        },
-        ...props,
-        children: label
-    });
+var Button = function Button(_ref) {
+  var _ref$primary = _ref.primary,
+      primary = _ref$primary === void 0 ? false : _ref$primary,
+      _ref$size = _ref.size,
+      size = _ref$size === void 0 ? "medium" : _ref$size,
+      backgroundColor = _ref.backgroundColor,
+      label = _ref.label,
+      props = _objectWithoutProperties(_ref, _excluded);
+
+  var mode = primary ? "storybook-button--primary" : "storybook-button--secondary";
+  return /*#__PURE__*/React__default["default"].createElement("button", _extends({
+    type: "button",
+    className: ["storybook-button", "storybook-button--".concat(size), mode].join(" "),
+    style: {
+      backgroundColor: backgroundColor
+    }
+  }, props), label);
 };
 
-
-
-
-const $60ccc0809904a519$var$GalleryContainer = ($parcel$interopDefault($gXNCa$styledcomponents)).div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-`;
-const $60ccc0809904a519$export$55a2b0f315878a81 = ({ images: images , numberOfColumns: numberOfColumns  })=>{
-    const columnsClass = `w-${numberOfColumns}/12`;
-    return /*#__PURE__*/ $gXNCa$reactjsxruntime.jsx($60ccc0809904a519$var$GalleryContainer, {
-        className: "flex flex-wrap items-center",
-        children: /*#__PURE__*/ $gXNCa$reactjsxruntime.jsx("div", {
-            className: columnsClass,
-            children: images.map((image)=>image && image.src && /*#__PURE__*/ $gXNCa$reactjsxruntime.jsx("img", {
-                    src: image.src,
-                    alt: image.alt || "Gallery Image"
-                })
-            )
-        })
+var GalleryContainer = styled__default["default"].div.withConfig({
+  displayName: "ImageGallery__GalleryContainer",
+  componentId: "sc-1k3q7q7-0"
+})(["display:flex;flex-wrap:wrap;align-items:center;"]);
+var ImageGallery = function ImageGallery(_ref) {
+  var images = _ref.images,
+      numberOfColumns = _ref.numberOfColumns;
+  var columnsClass = "w-".concat(numberOfColumns, "/12");
+  return /*#__PURE__*/React.createElement(GalleryContainer, {
+    className: "flex flex-wrap items-center"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: columnsClass
+  }, images.map(function (image) {
+    return image && image.src && /*#__PURE__*/React.createElement("img", {
+      src: image.src,
+      alt: image.alt || "Gallery Image"
     });
+  })));
 };
 
-
-
-
-$parcel$exportWildcard(module.exports, $c3e57ae7e5dd4d0a$exports);
-
-
+exports.Button = Button;
+exports.ImageGallery = ImageGallery;
 //# sourceMappingURL=main.js.map
