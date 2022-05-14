@@ -1,1 +1,62 @@
-import e from"react";import t from"styled-components";function o(){return o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var o=arguments[t];for(var r in o)Object.prototype.hasOwnProperty.call(o,r)&&(e[r]=o[r])}return e},o.apply(this,arguments)}!function(e,t){void 0===t&&(t={});var o=t.insertAt;if(e&&"undefined"!=typeof document){var r=document.head||document.getElementsByTagName("head")[0],n=document.createElement("style");n.type="text/css","top"===o&&r.firstChild?r.insertBefore(n,r.firstChild):r.appendChild(n),n.styleSheet?n.styleSheet.cssText=e:n.appendChild(document.createTextNode(e))}}(".storybook-button{border:0;border-radius:3em;cursor:pointer;display:inline-block;font-family:Nunito Sans,Helvetica Neue,Helvetica,Arial,sans-serif;font-weight:700;line-height:1}.storybook-button--primary{background-color:#1ea7fd;color:#fff}.storybook-button--secondary{background-color:transparent;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);color:#333}.storybook-button--small{font-size:12px;padding:10px 16px}.storybook-button--medium{font-size:14px;padding:11px 20px}.storybook-button--large{font-size:16px;padding:12px 24px}");const r=({primary:t=!1,size:r="medium",backgroundColor:n,label:a,...s})=>{const i=t?"storybook-button--primary":"storybook-button--secondary";return e.createElement("button",o({type:"button",className:["storybook-button",`storybook-button--${r}`,i].join(" "),style:{backgroundColor:n}},s),a)},n=t.div.withConfig({displayName:"ImageGallery__GalleryContainer",componentId:"sc-1k3q7q7-0"})(["display:flex;flex-wrap:wrap;align-items:center;"]),a=({images:e,numberOfColumns:t})=>{const o=`w-${t}/12`;return React.createElement(n,{className:"flex flex-wrap items-center"},React.createElement("div",{className:o},e.map((e=>e&&e.src&&React.createElement("img",{src:e.src,alt:e.alt||"Gallery Image"})))))};export{r as Button,a as ImageGallery};
+import "./main.css";
+import {jsx as $5OpyM$jsx} from "react/jsx-runtime";
+import "react";
+import $5OpyM$styledcomponents from "styled-components";
+
+function $parcel$export(e, n, v, s) {
+  Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
+}
+var $7f25b1b2e74b20aa$exports = {};
+
+$parcel$export($7f25b1b2e74b20aa$exports, "Button", () => $19d443a843229f97$export$353f5b6fc5456de1);
+$parcel$export($7f25b1b2e74b20aa$exports, "ImageGallery", () => $b7b100fb1bd2a47e$export$55a2b0f315878a81);
+
+
+
+const $19d443a843229f97$export$353f5b6fc5456de1 = ({ primary: primary = false , size: size = "medium" , backgroundColor: backgroundColor , label: label , ...props })=>{
+    const mode = primary ? "storybook-button--primary" : "storybook-button--secondary";
+    return /*#__PURE__*/ $5OpyM$jsx("button", {
+        type: "button",
+        className: [
+            "storybook-button",
+            `storybook-button--${size}`,
+            mode
+        ].join(" "),
+        style: {
+            backgroundColor: backgroundColor
+        },
+        ...props,
+        children: label
+    });
+};
+
+
+
+
+const $b7b100fb1bd2a47e$var$GalleryContainer = $5OpyM$styledcomponents.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+`;
+const $b7b100fb1bd2a47e$export$55a2b0f315878a81 = ({ images: images , numberOfColumns: numberOfColumns  })=>{
+    const columnsClass = `w-${numberOfColumns}/12`;
+    return /*#__PURE__*/ $5OpyM$jsx($b7b100fb1bd2a47e$var$GalleryContainer, {
+        className: "flex flex-wrap items-center",
+        children: /*#__PURE__*/ $5OpyM$jsx("div", {
+            className: columnsClass,
+            children: images.map((image)=>image && image.src && /*#__PURE__*/ $5OpyM$jsx("img", {
+                    src: image.src,
+                    alt: image.alt || "Gallery Image"
+                })
+            )
+        })
+    });
+};
+
+
+
+
+
+
+export {$19d443a843229f97$export$353f5b6fc5456de1 as Button, $b7b100fb1bd2a47e$export$55a2b0f315878a81 as ImageGallery};
+//# sourceMappingURL=index.es.js.map
