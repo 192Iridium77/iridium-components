@@ -1,1 +1,126 @@
-import e from"react";import t from"styled-components";function o(){return o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var o=arguments[t];for(var r in o)Object.prototype.hasOwnProperty.call(o,r)&&(e[r]=o[r])}return e},o.apply(this,arguments)}!function(e,t){void 0===t&&(t={});var o=t.insertAt;if(e&&"undefined"!=typeof document){var r=document.head||document.getElementsByTagName("head")[0],n=document.createElement("style");n.type="text/css","top"===o&&r.firstChild?r.insertBefore(n,r.firstChild):r.appendChild(n),n.styleSheet?n.styleSheet.cssText=e:n.appendChild(document.createTextNode(e))}}(".storybook-button{border:0;border-radius:3em;cursor:pointer;display:inline-block;font-family:Nunito Sans,Helvetica Neue,Helvetica,Arial,sans-serif;font-weight:700;line-height:1}.storybook-button--primary{background-color:#1ea7fd;color:#fff}.storybook-button--secondary{background-color:transparent;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);color:#333}.storybook-button--small{font-size:12px;padding:10px 16px}.storybook-button--medium{font-size:14px;padding:11px 20px}.storybook-button--large{font-size:16px;padding:12px 24px}");const r=({primary:t=!1,size:r="medium",backgroundColor:n,label:a,...s})=>{const i=t?"storybook-button--primary":"storybook-button--secondary";return e.createElement("button",o({type:"button",className:["storybook-button",`storybook-button--${r}`,i].join(" "),style:{backgroundColor:n}},s),a)},n=t.div.withConfig({displayName:"ImageGallery__GalleryContainer",componentId:"sc-1k3q7q7-0"})(["display:flex;flex-wrap:wrap;align-items:center;"]),a=({images:e,numberOfColumns:t})=>{const o=`w-${t}/12`;return React.createElement(n,{className:"flex flex-wrap items-center"},React.createElement("div",{className:o},e.map((e=>e&&e.src&&React.createElement("img",{src:e.src,alt:e.alt||"Gallery Image"})))))};export{r as Button,a as ImageGallery};
+import React$1 from 'react';
+import styled from 'styled-components';
+
+function unwrapExports (x) {
+	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+}
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+var _extends_1 = createCommonjsModule(function (module) {
+function _extends() {
+  module.exports = _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  return _extends.apply(this, arguments);
+}
+
+module.exports = _extends, module.exports.__esModule = true, module.exports["default"] = module.exports;
+});
+
+var _extends = unwrapExports(_extends_1);
+
+var objectWithoutPropertiesLoose = createCommonjsModule(function (module) {
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+module.exports = _objectWithoutPropertiesLoose, module.exports.__esModule = true, module.exports["default"] = module.exports;
+});
+
+unwrapExports(objectWithoutPropertiesLoose);
+
+var objectWithoutProperties = createCommonjsModule(function (module) {
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+module.exports = _objectWithoutProperties, module.exports.__esModule = true, module.exports["default"] = module.exports;
+});
+
+var _objectWithoutProperties = unwrapExports(objectWithoutProperties);
+
+var _excluded = ["primary", "size", "backgroundColor", "label"];
+/**
+ * Primary UI component for user interaction
+ */
+
+var Button = function Button(_ref) {
+  var _ref$primary = _ref.primary,
+      primary = _ref$primary === void 0 ? false : _ref$primary,
+      _ref$size = _ref.size,
+      size = _ref$size === void 0 ? "medium" : _ref$size,
+      backgroundColor = _ref.backgroundColor,
+      label = _ref.label,
+      props = _objectWithoutProperties(_ref, _excluded);
+
+  var mode = primary ? "storybook-button--primary" : "storybook-button--secondary";
+  return /*#__PURE__*/React$1.createElement("button", _extends({
+    type: "button",
+    className: ["storybook-button", "storybook-button--".concat(size), mode].join(" "),
+    style: {
+      backgroundColor: backgroundColor
+    }
+  }, props), label);
+};
+
+var GalleryContainer = styled.div.withConfig({
+  displayName: "ImageGallery__GalleryContainer",
+  componentId: "sc-1k3q7q7-0"
+})(["display:flex;flex-wrap:wrap;align-items:center;"]);
+var ImageGallery = function ImageGallery(_ref) {
+  var images = _ref.images,
+      numberOfColumns = _ref.numberOfColumns;
+  var columnsClass = "w-".concat(numberOfColumns, "/12");
+  return /*#__PURE__*/React.createElement(GalleryContainer, {
+    className: "flex flex-wrap items-center"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: columnsClass
+  }, images.map(function (image) {
+    return image && image.src && /*#__PURE__*/React.createElement("img", {
+      src: image.src,
+      alt: image.alt || "Gallery Image"
+    });
+  })));
+};
+
+export { Button, ImageGallery };
+//# sourceMappingURL=index.es.js.map

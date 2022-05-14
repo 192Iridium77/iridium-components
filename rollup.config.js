@@ -1,34 +1,37 @@
 import babel from "rollup-plugin-babel";
-import resolve from "@rollup/plugin-node-resolve";
-import external from "rollup-plugin-peer-deps-external";
-import postcss from "rollup-plugin-postcss";
-import { terser } from "rollup-plugin-terser";
+import commonjs from "rollup-plugin-commonjs";
+import resolve from "rollup-plugin-node-resolve";
+import replace from "rollup-plugin-replace";
+import packageJson from "./package.json";
 
-export default {
-  input: "./src/index.js",
-  output: [
-    {
-      file: "dist/index.js",
-      format: "cjs",
-    },
-    {
-      file: "dist/index.es.js",
-      format: "esm",
-    },
-  ],
-  external: ["styled-components"],
-  plugins: [
-    postcss({
-      plugins: [],
-      minimize: true,
-    }),
-    babel({
-      exclude: "node_modules/**",
-      presets: ["@babel/preset-react"],
-      plugins: ["babel-plugin-styled-components"],
-    }),
-    external(),
-    resolve(),
-    terser(),
-  ],
-};
+const NODE_ENV = process.env.NODE_ENV || "development";
+
+export default [
+  {
+    input: "./src/index.js",
+    output: [
+      {
+        file: packageJson.main,
+        format: "cjs",
+        sourcemap: true,
+      },
+      {
+        file: packageJson.module,
+        format: "esm",
+        sourcemap: true,
+      },
+    ],
+    plugins: [
+      replace({
+        "process.env.NODE_ENV": JSON.stringify(NODE_ENV),
+      }),
+      babel({
+        exclude: "node_modules/**",
+        runtimeHelpers: true,
+      }),
+      resolve(),
+      commonjs(),
+    ],
+    external: (id) => /^react|react-dom|styled-components/.test(id),
+  },
+];
