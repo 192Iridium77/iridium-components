@@ -1,4 +1,4 @@
-import React$1 from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 function unwrapExports (x) {
@@ -93,7 +93,7 @@ var Button = function Button(_ref) {
       props = _objectWithoutProperties(_ref, _excluded);
 
   var mode = primary ? "storybook-button--primary" : "storybook-button--secondary";
-  return /*#__PURE__*/React$1.createElement("button", _extends({
+  return /*#__PURE__*/React.createElement("button", _extends({
     type: "button",
     className: ["storybook-button", "storybook-button--".concat(size), mode].join(" "),
     style: {
@@ -122,5 +122,16 @@ var ImageGallery = function ImageGallery(_ref) {
   })));
 };
 
-export { Button, ImageGallery };
+var MenuLeft = function MenuLeft(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "flex flex-col"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "h-full opacity-0"
+  }, children), /*#__PURE__*/React.createElement("div", {
+    className: "fixed z-20 bg-white left-0 h-full"
+  }, children));
+};
+
+export { Button, ImageGallery, MenuLeft };
 //# sourceMappingURL=index.es.js.map

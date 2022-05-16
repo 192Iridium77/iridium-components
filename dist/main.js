@@ -2,12 +2,12 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var React$1 = require('react');
+var React = require('react');
 var styled = require('styled-components');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var React__default = /*#__PURE__*/_interopDefaultLegacy(React$1);
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var styled__default = /*#__PURE__*/_interopDefaultLegacy(styled);
 
 function unwrapExports (x) {
@@ -119,18 +119,30 @@ var ImageGallery = function ImageGallery(_ref) {
   var images = _ref.images,
       numberOfColumns = _ref.numberOfColumns;
   var columnsClass = "w-".concat(numberOfColumns, "/12");
-  return /*#__PURE__*/React.createElement(GalleryContainer, {
+  return /*#__PURE__*/React__default["default"].createElement(GalleryContainer, {
     className: "flex flex-wrap items-center"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React__default["default"].createElement("div", {
     className: columnsClass
   }, images.map(function (image) {
-    return image && image.src && /*#__PURE__*/React.createElement("img", {
+    return image && image.src && /*#__PURE__*/React__default["default"].createElement("img", {
       src: image.src,
       alt: image.alt || "Gallery Image"
     });
   })));
 };
 
+var MenuLeft = function MenuLeft(_ref) {
+  var children = _ref.children;
+  return /*#__PURE__*/React__default["default"].createElement("div", {
+    className: "flex flex-col"
+  }, /*#__PURE__*/React__default["default"].createElement("div", {
+    className: "h-full opacity-0"
+  }, children), /*#__PURE__*/React__default["default"].createElement("div", {
+    className: "fixed z-20 bg-white left-0 h-full"
+  }, children));
+};
+
 exports.Button = Button;
 exports.ImageGallery = ImageGallery;
+exports.MenuLeft = MenuLeft;
 //# sourceMappingURL=main.js.map
