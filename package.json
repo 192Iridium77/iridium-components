@@ -9,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "build:icons": "svgr --icon --title-prop -d src/components/icons icons",
     "build": "rollup -c"
   },
   "author": "",
@@ -26,6 +27,7 @@
     "@storybook/addon-links": "^6.4.22",
     "@storybook/react": "6.4.22",
     "@storybook/testing-library": "^0.0.11",
+    "@svgr/cli": "^6.2.1",
     "@types/react": "^18.0.9",
     "babel-loader": "^8.2.5",
     "babel-plugin-styled-components": "^2.0.7",

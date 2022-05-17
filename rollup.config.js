@@ -1,10 +1,8 @@
 import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 import resolve from "rollup-plugin-node-resolve";
-import replace from "rollup-plugin-replace";
 import packageJson from "./package.json";
-
-const NODE_ENV = process.env.NODE_ENV || "development";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
 export default [
   {
@@ -22,9 +20,7 @@ export default [
       },
     ],
     plugins: [
-      replace({
-        "process.env.NODE_ENV": JSON.stringify(NODE_ENV),
-      }),
+      peerDepsExternal(),
       babel({
         exclude: "node_modules/**",
         runtimeHelpers: true,
